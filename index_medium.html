@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>MetaCubeSpace.com</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
+        <style>
+            body {
+                color: #eee;
+                font-family: 'Montserrat', sans-serif;
+                background: black;
+                text-align: center;
+                margin: 0;
+                padding: 0;
+            }
+            .logo {
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 30px;
+                width: 115px;
+                display: inline-block;
+                opacity: 0;
+                -webkit-animation: fade-logo .75s linear forwards;
+                -moz-animation: fade-logo .75s linear forwards;
+                -o-animation: fade-logo .75s linear forwards;
+                -ms-animation: fade-logo .75s linear forwards;
+                animation: fade-logo .75s linear forwards;
+                animation-delay: 2.5s;
+            }
+            .claim {
+                position: absolute;
+                top: 52vw;
+                width: 100%;
+                font-weight: 100;
+                font-size: 18px;
+                text-transform: uppercase;
+                opacity: 0;
+                -webkit-animation: fade-claim .75s linear forwards;
+                -moz-animation: fade-claim .75s linear forwards;
+                -o-animation: fade-claim .75s linear forwards;
+                -ms-animation: fade-claim .75s linear forwards;
+                animation: fade-claim .75s linear forwards;
+                animation-delay: 4s;
+            }
+            .claim span {
+                font-weight: 400;
+            }
+
+            .second-claim {
+                
+                font-weight: 100;
+                font-size: 22px;
+                text-transform: uppercase;
+                opacity: 0;
+                -webkit-animation: fade-claim .75s linear forwards;
+                -moz-animation: fade-claim .75s linear forwards;
+                -o-animation: fade-claim .75s linear forwards;
+                -ms-animation: fade-claim .75s linear forwards;
+                animation: fade-claim .75s linear forwards;
+                animation-delay: 6s;
+            }
+            .second-claim span {
+                font-weight: 400;
+            }
+            .video {
+                max-width: 850px;
+                width: 100%;
+                height: auto;
+                margin-top: 150px;
+            }
+
+            /* timer */
+            
+            .syotimer{
+                text-align: center;
+                margin: 20px auto 0 auto;
+                padding: 0;
+                width: 100%;
+            }
+            .syotimer__body{
+                margin-left: 0px;
+                margin-right: 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+            }
+            
+            .syotimer-cell {
+                
+                margin: 0;
+                width: 80px;
+                height: auto;
+            
+            }
+            
+            .syotimer-cell__value {
+                font-size: 22px;
+                font-weight: 400;
+                margin: 5px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .syotimer-cell__unit {
+                font-size: 14px;
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+
+            @media screen and (min-width: 486px) {
+                .logo {
+                    position: absolute;
+                    left: 50%;
+                    top: 70px;
+                    width: 115px;
+                }
+                .claim {
+                    font-size: 20px;
+                    top: 200px;
+                }
+                
+                .video {
+                    margin-top: 0;
+                }
+                .syotimer-cell {
+                    margin: 0;
+                    width: 80px;
+                    height: auto;
+                
+                }
+            }
+
+            @media screen and (min-width: 768px) {
+                .logo {
+                    position: absolute;
+                    left: 50%;
+                    top: 70px;
+                    width: 190px;
+                }
+                .claim {
+                    font-size: 26px;
+                    top: 280px;
+                }
+                
+                .video {
+                    margin-top: -50px;
+                }
+                .syotimer-cell {
+                    margin: 0;
+                    width: 110px;
+                    height: auto;
+                
+                }
+                .syotimer-cell__value {
+                    font-size: 30px;
+                }
+                
+                .syotimer-cell__unit {
+                    font-size: 14px;
+                }
+            }
+
+            @media screen and (min-width: 992px) {
+                .logo {
+                    position: absolute;
+                    left: 50%;
+                    top: 80px;
+                    width: 180px;
+                }
+                .claim {
+                    font-size: 24px;
+                    top: 300px;
+                }
+                
+                .video {
+                    margin-top: -50px;
+                }
+                .syotimer-cell {
+                    margin: 0;
+                    width: 100px;
+                    height: auto;
+                
+                }
+                .syotimer-cell__value {
+                    font-size: 32px;
+                }
+                
+                .syotimer-cell__unit {
+                    font-size: 14px;
+                }
+            }
+
+            @keyframes fade-logo {
+            0%   {opacity: 0;}
+            100%   {opacity: .75;}
+            }
+
+            @keyframes fade-claim {
+            0%   {opacity: 0;}
+            100%   {opacity: .75;}
+            }
+
+            
+        </style>
+    </head>
+    <body >
+        <img src="/images/logo.svg" class="logo" alt="logo">
+        <h1 class="claim">get <span>ready</span>...</small><br>
+            <span id="simple-timer"></span>
+        </h1>
+        
+        <video class="video" autoplay muted playsinline>
+            <source  src="/images/mistery_cube_2.mp4" type="video/mp4">
+            <source  src="/images/mistery_cube_2.webm" type="video/webm">
+            <source  src="/images/mistery_cube_2.ogv" type="video/ogv">
+            <img src="/images/placeholder-video.jpg" title="Your browser does not support the video tag">
+        </video>
+        <h1 class="second-claim">Let's <b>Discover</b> The Potential of <b>Metacube</b></h1>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script type="text/javascript" src="js/jquery.syotimer.js"></script>
+        <script type="text/javascript">
+             $.syotimerLang.ita = {
+                    second: ["secondo", "secondi"],
+                    minute: ["minuto", "minuti"],
+                    hour: ["ora", "ore"],
+                    day: ["giorno", "giorni"],
+                };
+            jQuery(function ($) {
+               
+              $("#simple-timer").syotimer({
+                date: new Date(2022, 5, 25, 0, 0),
+                periodUnit: "d",
+                day: "giorni",
+                hour: "ore",
+                minute: "minuti",
+                second: "secondi",
+                lang: "ita"
+              });
+            });
+        </script>
+        
+    </body>
+</html>
